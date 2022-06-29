@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B0B0B0">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SH_RV_homeWorkList"/>
+
+    <ImageView
+        android:id="@+id/SHW_ic_books"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/ic_books"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+</LinearLayout>

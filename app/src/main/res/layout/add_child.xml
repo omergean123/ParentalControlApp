@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    android:background="#B0B0B0">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/ic_background"
+        android:fitsSystemWindows="true" />
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/addChild"
+        android:layout_marginTop="70dp"
+        android:textSize="35sp" />
+
+
+    <EditText
+        android:id="@+id/AC_EDT_childPhone"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:hint="Enter child Phone"
+        android:minHeight="48dp"
+        android:textColorHint="#7FFF56"/>
+
+
+    <Button
+        android:id="@+id/AC_BTN_AddChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/AC_EDT_childPhone"
+        android:layout_centerHorizontal="true"
+        android:text="ADD" />
+
+
+</RelativeLayout>

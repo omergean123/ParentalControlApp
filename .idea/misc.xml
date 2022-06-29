@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/LandingScreenLogin.xml" value="0.16423357664233576" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/activity_main.xml" value="0.23859649122807017" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/add_child.xml" value="0.2" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/add_event.xml" value="0.2" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/add_homework.xml" value="0.176" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/add_meals.xml" value="0.176" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/child_landing_screen.xml" value="0.264" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/from_parent_each_child.xml" value="0.2" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/landing_screen_login.xml" value="0.2" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/layout.xml" value="0.1" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/list_item.xml" value="0.19581017528858485" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/login.xml" value="0.2" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/my_children.xml" value="0.19581017528858485" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/parent_landing_screen.xml" value="0.264" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/register.xml" value="0.176" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/show_events.xml" value="0.264" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/show_homework.xml" value="0.12" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/show_meal.xml" value="0.1" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/top_app_bar_menu.xml" value="0.1140625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

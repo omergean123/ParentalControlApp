@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ParentalControlApp</string>
+    <string name="login">Login</string>
+    <string name="addHomework">Add homework</string>
+    <string name="addmeals">Add meals</string>
+    <string name="addChild">Add child</string>
+</resources>

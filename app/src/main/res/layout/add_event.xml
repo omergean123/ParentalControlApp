@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B0B0B0">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/ic_background"
+        android:fitsSystemWindows="true" >
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+<CalendarView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/AE_CAL_Events">
+
+</CalendarView>
+    <ImageView
+        android:id="@+id/AE_ic_event"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/ic_event"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+    <EditText
+        android:id="@+id/AE_EDT_eventDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@id/AE_CAL_Events"
+        android:layout_centerHorizontal="true"
+        android:text="Details ..." />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/AE_EDT_eventDetails"/>
+</RelativeLayout>

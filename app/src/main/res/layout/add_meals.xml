@@ -1,0 +1,62 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    android:background="#B0B0B0">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/ic_background"
+        android:fitsSystemWindows="true" />
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/addmeals"
+        android:textSize="35sp" />
+
+
+    <EditText
+        android:id="@+id/AM_EDT_details"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:focusable="true"
+        android:hint="what did you eat ?"
+        android:minHeight="48dp"
+        android:textColorHint="#000000" />
+
+    <EditText
+        android:id="@+id/AM_EDT_time"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AM_EDT_details"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="B/L/D ?"
+        android:minHeight="48dp"
+        android:textColorHint="#000000" />
+
+    <Button
+        android:id="@+id/AM_BTN_addMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/AM_EDT_time"
+        android:text="ADD"
+        tools:ignore="DuplicateIds" />
+    <ImageView
+        android:id="@+id/AM_ic_salad"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/ic_salad"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/AM_BTN_addMeal" />
+
+</RelativeLayout>

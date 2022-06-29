@@ -1,0 +1,67 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/ic_background"
+        android:fitsSystemWindows="true" />
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/login"
+        android:textSize="35sp"
+        android:layout_marginTop="70dp"/>
+
+    <EditText
+        android:id="@+id/Login_EDT_PhoneNumber"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:focusable="true"
+        android:hint="Enter phone"
+        android:minHeight="48dp"
+        android:textColorHint="#000000" />
+
+    <EditText
+        android:id="@+id/LOGIN_EDT_password"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/Login_EDT_PhoneNumber"
+
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#000000" />
+
+    <Button
+        android:id="@+id/Login_BTN_Login"
+        android:layout_width="162dp"
+        android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/textview"
+        android:layout_toLeftOf="@+id/textview"
+        android:text="login"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/Login_BTN_Register"
+        android:layout_width="162dp"
+        android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/textview"
+        android:layout_toRightOf="@+id/textview"
+        android:text="Sign up"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"/>
+
+</RelativeLayout>

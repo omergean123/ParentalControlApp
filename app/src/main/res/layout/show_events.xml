@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B0B0B0">
+<CalendarView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/SE_CAL_events">
+
+</CalendarView>
+
+    <ImageView
+        android:id="@+id/SE_ic_event"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_event" />
+
+    <TextView
+        android:id="@+id/SE_TXT_Details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SE_CAL_events"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
