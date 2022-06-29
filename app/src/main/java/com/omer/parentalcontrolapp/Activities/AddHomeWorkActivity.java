@@ -44,8 +44,8 @@ public class AddHomeWorkActivity extends AppCompatActivity {
     }
 
     private void storeTaskForChild(Task myTask) {
-        DatabaseReference myRef = realtimeDB.getReference("Users").child(dataManager.getCurrentUser().getPhoneNumber()).child("Tasks").child(myTask.getSubject());
-        myRef.child("pages").setValue(myTask.getPages());
+        DatabaseReference myRef = realtimeDB.getReference("Users").child(dataManager.getCurrentUser().getPhoneNumber()).child("Tasks");
+        myRef.child(myTask.getSubject()).setValue(myTask.getPages());
     }
 
     private void findViews() {

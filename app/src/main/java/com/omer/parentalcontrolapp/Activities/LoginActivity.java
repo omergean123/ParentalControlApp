@@ -52,8 +52,8 @@ public class LoginActivity extends AppCompatActivity  {
         Login_BTN_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                loadUserFromDB();
-                loginUser();
+                loadUserFromDB();
+//                loginUser();
             }
         });
     }

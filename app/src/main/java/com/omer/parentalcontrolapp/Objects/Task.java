@@ -8,6 +8,10 @@ public class Task {
         this.pages = pages;
     }
 
+    public Task() {
+
+    }
+
     public String getSubject() {
         return subject;
     }
@@ -22,5 +26,13 @@ public class Task {
 
     public void setPages(String pages) {
         this.pages = pages;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "subject='" + subject + '\'' +
+                ", pages='" + pages + '\'' +
+                '}';
     }
 }

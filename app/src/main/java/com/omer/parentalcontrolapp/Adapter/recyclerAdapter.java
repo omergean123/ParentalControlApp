@@ -25,8 +25,11 @@ import com.omer.parentalcontrolapp.Activities.LoginActivity;
 import com.omer.parentalcontrolapp.Activities.MainActivity;
 import com.omer.parentalcontrolapp.Activities.ParentActivity;
 import com.omer.parentalcontrolapp.Firebase.DataManager;
+import com.omer.parentalcontrolapp.Objects.Task;
 import com.omer.parentalcontrolapp.Objects.User;
 import com.omer.parentalcontrolapp.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -41,19 +44,25 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.MyView
         this.clickListener = cl;
         this.usersList = userList;
     }
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         private Button phoneNumber;
-
         public MyViewHolder(final View view) {
             super(view);
             phoneNumber = view.findViewById(R.id.LI_BTN_childName);
-            view.setOnClickListener(this);
+            phoneNumber.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (clickListener != null) {
+                        clickListener.clicked(view, getAdapterPosition());
+                    }
+                }
+            });
         }
 
-        @Override
-        public void onClick(View view) {
-            clickListener.clicked(view,getAdapterPosition());
-        }
+//        @Override
+//        public void onClick(View view) {            view.setOnClickListener(this);
+//            clickListener.clicked(view,getAdapterPosition());
+//        }
     }
     @NonNull
     @Override
