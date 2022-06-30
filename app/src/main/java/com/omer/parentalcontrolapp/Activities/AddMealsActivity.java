@@ -42,8 +42,8 @@ public class AddMealsActivity extends AppCompatActivity {
         });
     }
     private void storeMealForChild(Meal myMeal) {
-        DatabaseReference myRef = realtimeDB.getReference("Users").child(dataManager.getCurrentUser().getPhoneNumber()).child("Meals").child(myMeal.getMealDetails());
-        myRef.child("when").setValue(myMeal.getMealTime());
+        DatabaseReference myRef = realtimeDB.getReference("Users").child(dataManager.getCurrentUser().getPhoneNumber()).child("Meals");
+        myRef.child(myMeal.getMealDetails()).setValue(myMeal.getMealTime());
     }
     private void findViews() {
         AM_EDT_details = findViewById(R.id.AM_EDT_details);

@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#B0B0B0">
 
+
     <LinearLayout
+        android:id="@+id/homeWorkLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true">
 
         <TextView
-            android:id="@+id/SH_TXT_SUBJECT"
+            android:id="@+id/SH_TXT_KEY"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/SH_TXT_PAGES"
+            android:id="@+id/SH_TXT_VALUE"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="TextView" />

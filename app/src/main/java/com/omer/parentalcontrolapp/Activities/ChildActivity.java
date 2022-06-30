@@ -30,7 +30,7 @@ public class ChildActivity extends AppCompatActivity {
     private void initButtons() {
         initAddHomeWorkButton();
         initAddMealsButton();
-//        initWatchEventsButton();
+        initWatchEventsButton();
     }
 
     private void initWatchEventsButton() {

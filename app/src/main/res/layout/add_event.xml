@@ -18,7 +18,8 @@
 <CalendarView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/AE_CAL_Events">
+    android:id="@+id/AE_CAL_Events"
+    android:layout_marginTop="70dp">
 
 </CalendarView>
     <ImageView
@@ -36,9 +37,9 @@
         android:inputType="textPersonName"
         android:layout_below="@id/AE_CAL_Events"
         android:layout_centerHorizontal="true"
-        android:text="Details ..." />
+        android:hint="Details ..." />
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/AE_BTN_addEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"

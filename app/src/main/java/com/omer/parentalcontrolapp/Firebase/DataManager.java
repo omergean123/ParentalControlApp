@@ -16,6 +16,16 @@ public class DataManager {
     private User currentUser;
     private static DataManager single_instance = null;
 
+    public String getChildPhone() {
+        return childPhone;
+    }
+
+    public void setChildPhone(String childPhone) {
+        this.childPhone = childPhone;
+    }
+
+    private String childPhone;
+
     public DataManager(){
         firebaseAuth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();

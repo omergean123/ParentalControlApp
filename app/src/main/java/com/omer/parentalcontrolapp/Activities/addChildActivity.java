@@ -2,15 +2,20 @@ package com.omer.parentalcontrolapp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.omer.parentalcontrolapp.Firebase.DataManager;
 import com.omer.parentalcontrolapp.R;
 
@@ -40,13 +45,39 @@ public class addChildActivity extends AppCompatActivity {
 
     private void storeChildForParent() {
         String myChildPhone = AC_EDT_childPhone.getText().toString();
-        if(AC_EDT_childPhone.getText().toString()!=null){
-            DatabaseReference myRef = realtimeDB.getReference("Users").child(dataManager.getCurrentUser().getPhoneNumber()).child("Children");
-            myRef.child(myChildPhone).setValue(myChildPhone);
-        }
-        else {
-            Toast.makeText(this, "please enter phone", Toast.LENGTH_SHORT).show();
-        }
+
+        DatabaseReference bigRef = realtimeDB.getReference("Users");
+        bigRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int found = 0;
+                for (DataSnapshot ds : snapshot.getChildren()){
+                    if(ds.getKey().equals(myChildPhone)){
+                        found = 1;
+                        if(AC_EDT_childPhone.getText().toString()!=null){
+                            DatabaseReference myRef = realtimeDB.getReference("Users").child(dataManager.getCurrentUser().getPhoneNumber()).child("Children");
+                            myRef.child(myChildPhone).setValue(myChildPhone);
+                            Toast.makeText(addChildActivity.this, "User added successfully", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(addChildActivity.this, "Please enter phone number", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                }
+                if(found == 0){
+                    Toast.makeText(addChildActivity.this, "No such user", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
     }
 
     private void findViews() {

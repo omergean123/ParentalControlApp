@@ -3,7 +3,6 @@ package com.omer.parentalcontrolapp.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,7 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.omer.parentalcontrolapp.Adapter.recyclerAdapter;
+import com.omer.parentalcontrolapp.Adapter.recyclerMyChildren;
 import com.omer.parentalcontrolapp.Firebase.DataManager;
 import com.omer.parentalcontrolapp.R;
 
@@ -26,7 +25,7 @@ public class myChildrenActivity extends AppCompatActivity {
     private RecyclerView myChildrenRV;
     private final DataManager dataManager = DataManager.getInstance();
     private final FirebaseDatabase realtimeDB = dataManager.getRealTimeDB();
-    private recyclerAdapter myAdapter;
+    private recyclerMyChildren myAdapter;
     private ArrayList<String> usersList;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +39,11 @@ public class myChildrenActivity extends AppCompatActivity {
     private void initRecycleView() {
         myChildrenRV.setHasFixedSize(true);
         myChildrenRV.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        myAdapter = new recyclerAdapter( usersList, new recyclerAdapter.ClickListener() {
+        myAdapter = new recyclerMyChildren( usersList, new recyclerMyChildren.ClickListener() {
             @Override
             public void clicked(View v, int position) {
+                dataManager.setChildPhone(usersList.get(position));
                 Intent intent = new Intent(getApplicationContext(),forEachChildActivity.class);
-                intent.putExtra("phoneNumber",usersList.get(position));
                 startActivity(intent);
             }
         });
