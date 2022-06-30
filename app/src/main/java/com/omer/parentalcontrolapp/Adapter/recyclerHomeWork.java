@@ -53,6 +53,7 @@ public class recyclerHomeWork extends RecyclerView.Adapter<recyclerHomeWork.MyVi
 //        final MyViewHolder mvh =(MyViewHolder) holder;
         String subject = HomeWorkList.get(position).getSubject();
         String pages = HomeWorkList.get(position).getPages();
+        Log.d("pttt" , "5" + subject + pages);
         holder.SH_TXT_PAGES.setText(pages);
         holder.SH_TXT_SUBJECT.setText(subject);
 
