@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class recyclerHomeWork extends RecyclerView.Adapter<recyclerHomeWork.MyViewHolder> {
     private ArrayList<Task> HomeWorkList = new ArrayList<>();
 
+
     public recyclerHomeWork(ArrayList<Task> HomeWorkList) {
         this.HomeWorkList = HomeWorkList;
     }

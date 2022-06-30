@@ -45,7 +45,7 @@ public class addChildActivity extends AppCompatActivity {
 
     private void storeChildForParent() {
         String myChildPhone = AC_EDT_childPhone.getText().toString();
-
+//        int myType = dataManager.getCurrentUser().getType();
         DatabaseReference bigRef = realtimeDB.getReference("Users");
         bigRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

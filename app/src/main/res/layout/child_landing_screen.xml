@@ -47,5 +47,19 @@
             />
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="560dp">
 
+
+        <Button
+            android:id="@+id/CLS_BTN_LogOut"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="log out"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+    </LinearLayout>
 </RelativeLayout>

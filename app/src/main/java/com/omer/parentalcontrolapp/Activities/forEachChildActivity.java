@@ -11,7 +11,7 @@ import com.omer.parentalcontrolapp.R;
 
 public class forEachChildActivity extends AppCompatActivity {
     private Button PLS_BTN_ShowHomeWork,PLS_BTN_ShowMeals,PLS_BTN_AddEvents;
-    String childPhone;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.from_parent_each_child);

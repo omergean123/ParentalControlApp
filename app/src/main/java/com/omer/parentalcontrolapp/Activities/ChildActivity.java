@@ -15,9 +15,9 @@ import com.omer.parentalcontrolapp.Objects.User;
 import com.omer.parentalcontrolapp.R;
 
 public class ChildActivity extends AppCompatActivity {
-    private Button CLS_BTN_AddHomeWork , CLS_BTN_AddMeals , CLS_BTN_WatchEvents;
+    private Button CLS_BTN_AddHomeWork , CLS_BTN_AddMeals , CLS_BTN_WatchEvents ,CLS_BTN_LogOut ;
     private final DataManager dataManager = DataManager.getInstance();
-    private final FirebaseDatabase realtimeDB = dataManager.getRealTimeDB();
+//    private final FirebaseDatabase realtimeDB = dataManager.getRealTimeDB();
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -31,6 +31,17 @@ public class ChildActivity extends AppCompatActivity {
         initAddHomeWorkButton();
         initAddMealsButton();
         initWatchEventsButton();
+        initLogout();
+    }
+
+    private void initLogout() {
+        CLS_BTN_LogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dataManager.setCurrentUser(null);
+                startActivity(new Intent(ChildActivity.this, MainActivity.class));
+            }
+        });
     }
 
     private void initWatchEventsButton() {
@@ -64,5 +75,7 @@ public class ChildActivity extends AppCompatActivity {
     private void findViews() {
         CLS_BTN_AddHomeWork = findViewById(R.id.CLS_BTN_AddHomeWork);
         CLS_BTN_AddMeals = findViewById(R.id.CLS_BTN_AddMeals);
-        CLS_BTN_WatchEvents = findViewById(R.id.CLS_BTN_WatchEvents); }
+        CLS_BTN_WatchEvents = findViewById(R.id.CLS_BTN_WatchEvents);
+        CLS_BTN_LogOut = findViewById(R.id.CLS_BTN_LogOut);
+        }
 }

@@ -10,9 +10,15 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
+import com.firebase.ui.auth.IdpResponse;
+import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -25,6 +31,9 @@ import com.omer.parentalcontrolapp.Objects.Child;
 import com.omer.parentalcontrolapp.Objects.Parent;
 import com.omer.parentalcontrolapp.Objects.User;
 import com.omer.parentalcontrolapp.R;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
     private Button Register_BTN_Register,Register_BTN_BackToLogin;
@@ -65,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
                         tempUser.setType(0);
                         storeUserInDB(tempUser);
                         dataManager.setCurrentUser(tempUser);
+
 //                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                         replaceToParentActivity();
                     }
@@ -73,11 +83,14 @@ public class RegisterActivity extends AppCompatActivity {
                         storeUserInDB(tempUser);
                         dataManager.setCurrentUser(tempUser);
 //                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                        replaceToChildActivity();
+                       replaceToChildActivity();
                     }
                 }
         });
     }
+
+
+
     private void storeUserInDB(User userToStore) {
         DatabaseReference myRef = realtimeDB.getReference("Users").child(userToStore.getPhoneNumber());
         myRef.child("uid").setValue(userToStore.getUid());

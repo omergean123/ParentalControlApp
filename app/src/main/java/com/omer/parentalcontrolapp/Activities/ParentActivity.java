@@ -19,7 +19,7 @@ import com.omer.parentalcontrolapp.R;
 
 public class ParentActivity extends AppCompatActivity {
     private Button PLS_BTN_addChild;
-    private Button PLS_BTN_myChildren;
+    private Button PLS_BTN_myChildren , PLS_BTN_LogOut;
     private final DataManager dataManager = DataManager.getInstance();
     private final FirebaseDatabase realtimeDB = dataManager.getRealTimeDB();
     @Override
@@ -29,6 +29,17 @@ public class ParentActivity extends AppCompatActivity {
         findViews();
         initAddChildButton();
         initMyChildren();
+        initLogout();
+    }
+
+    private void initLogout() {
+        PLS_BTN_LogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dataManager.setCurrentUser(null);
+                startActivity(new Intent(ParentActivity.this, MainActivity.class));
+            }
+        });
     }
 
     private void initMyChildren() {
@@ -51,5 +62,7 @@ public class ParentActivity extends AppCompatActivity {
     private void findViews() {
         PLS_BTN_addChild = findViewById(R.id.PLS_BTN_addChild);
         PLS_BTN_myChildren = findViewById(R.id.PLS_BTN_myChildren);
+        PLS_BTN_LogOut = findViewById(R.id.PLS_BTN_LogOut);
+
     }
 }

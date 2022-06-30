@@ -54,7 +54,6 @@ public class recyclerMyChildren extends RecyclerView.Adapter<recyclerMyChildren.
     public void onBindViewHolder(@NonNull recyclerMyChildren.MyViewHolder holder, int position) {
         String phoneNum = usersList.get(position);
         holder.phoneNumber.setText(phoneNum);
-
     }
 
     @Override
