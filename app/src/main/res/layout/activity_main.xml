@@ -27,6 +27,7 @@
                 android:text="WELCOME TO PAC APP"
                 android:textColor="@color/black"
                 android:textSize="20dp"
+
                 android:textStyle="bold" />
 
             <Button

@@ -1,7 +1,9 @@
 package com.omer.parentalcontrolapp.Activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.omer.parentalcontrolapp.Adapter.recyclerHomeWork;
 import com.omer.parentalcontrolapp.Adapter.recyclerMeals;
@@ -57,7 +60,12 @@ public class showMealsActivity extends AppCompatActivity {
 
                 myChildrenRV.setHasFixedSize(true);
                 myChildrenRV.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                myAdapter = new recyclerMeals(mealsList);
+                myAdapter = new recyclerMeals(mealsList, new recyclerMeals.ClickListener() {
+                    @Override
+                    public void longClicked(View v, int position) {
+                        delete(position, mealsList.get(position).getMealDetails());
+                    }
+                });
                 myChildrenRV.setAdapter(myAdapter);
                 myAdapter.notifyDataSetChanged();
             }
@@ -69,6 +77,25 @@ public class showMealsActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void delete(int position, String md) {
+        DatabaseReference refDel = realtimeDB.getReference("Users").child(dataManager.getChildPhone()).child("Meals");
+        Query q = refDel.child(md);
+        q.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                snapshot.getRef().removeValue();
+                mealsList.remove(position);
+                myAdapter.notifyItemRemoved(position);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
     private void initView() {
         myChildrenRV = findViewById(R.id.myList);

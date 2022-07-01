@@ -19,12 +19,14 @@
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/list_item.xml" value="0.19581017528858485" />
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/login.xml" value="0.2" />
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/logout_fragment.xml" value="0.17144078666096624" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/message_layout.xml" value="0.17144078666096624" />
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/my_children.xml" value="0.19581017528858485" />
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/parent_landing_screen.xml" value="0.30787037037037035" />
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/register.xml" value="0.176" />
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/show_events.xml" value="0.25" />
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/show_homework.xml" value="0.1" />
-        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/show_meal.xml" value="0.1" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/show_key_value.xml" value="0.2" />
+        <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/show_meal.xml" value="0.176" />
         <entry key="..\:/Users/omer_/AndroidStudioProjects/ParentalControlApp/app/src/main/res/layout/top_app_bar_menu.xml" value="0.1140625" />
       </map>
     </option>

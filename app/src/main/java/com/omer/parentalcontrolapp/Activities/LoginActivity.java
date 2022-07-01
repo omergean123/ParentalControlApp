@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity  {
 
         InitRegisterButton();
         initLoginButton();
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
+//        FirebaseDatabase db = FirebaseDatabase.getInstance();
 
     }
 
@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
 //                loadUserFromDB();
+
                 loginUser();
             }
         });
@@ -119,28 +120,6 @@ public class LoginActivity extends AppCompatActivity  {
             }
         });
     }
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        DatabaseReference myRef = dataManager.getRealTimeDB().getReference("Users").child(currentUser.getPhoneNumber());
-//        myRef.get().addOnSuccessListener(dataSnapshot -> {
-//            if(dataSnapshot.exists()){
-//                User tempUser = dataSnapshot.getValue(User.class);
-//                dataManager.setCurrentUser(tempUser);
-////                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//                if(tempUser.getType() == 0){
-//                    Toast.makeText(this, "HELLO " + tempUser.getUid(), Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(LoginActivity.this,ParentActivity.class));
-//                }
-//                else {
-//                    startActivity(new Intent(LoginActivity.this, ChildActivity.class));
-//
-//                }
-//            }
-//            else{
-//                //no such document
-//                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
-//            }
-//            finish();
-
 
     private void replaceActivity() {
         Intent intent = new Intent(this, RegisterActivity.class);

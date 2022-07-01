@@ -1,6 +1,7 @@
 package com.omer.parentalcontrolapp.Activities;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.omer.parentalcontrolapp.Adapter.recyclerHomeWork;
 import com.omer.parentalcontrolapp.Firebase.DataManager;
@@ -59,7 +61,13 @@ public class showHomeWorkActivity extends AppCompatActivity {
 
                 myChildrenRV.setHasFixedSize(true);
                 myChildrenRV.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                myAdapter = new recyclerHomeWork(taskList);
+                myAdapter = new recyclerHomeWork(taskList, new recyclerHomeWork.ClickListener() {
+                    @Override
+                    public void longClicked(View v, int position) {
+                        delete(position, taskList.get(position).getSubject());
+
+                    }
+                });
                 myChildrenRV.setAdapter(myAdapter);
                 myAdapter.notifyDataSetChanged();
             }
@@ -71,6 +79,25 @@ public class showHomeWorkActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void delete(int position, String subject) {
+        DatabaseReference refDel = realtimeDB.getReference("Users").child(dataManager.getChildPhone()).child("Tasks");
+        Query q = refDel.child(subject);
+        q.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                snapshot.getRef().removeValue();
+                taskList.remove(position);
+                myAdapter.notifyItemRemoved(position);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     private void initView() {
         myChildrenRV = findViewById(R.id.myList);
     }

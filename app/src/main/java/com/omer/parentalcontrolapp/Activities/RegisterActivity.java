@@ -68,24 +68,24 @@ public class RegisterActivity extends AppCompatActivity {
                 String phoneNumber = Register_EDT_PhoneNumber.getText().toString();
                 String password = Register_EDT_Password.getText().toString();
                 String userName = Register_EDT_UserName.getText().toString();
-                User tempUser = new User(userName , phoneNumber, password);
-               // if(check_validation()){
-                    if(Register_isParent.isChecked()){
+                User tempUser = new User(userName, phoneNumber, password);
+                if (check_validation()) {
+                    if (Register_isParent.isChecked()) {
                         tempUser.setType(0);
                         storeUserInDB(tempUser);
                         dataManager.setCurrentUser(tempUser);
 
 //                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                         replaceToParentActivity();
-                    }
-                    else{
+                    } else {
                         tempUser.setType(1);
                         storeUserInDB(tempUser);
                         dataManager.setCurrentUser(tempUser);
 //                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                       replaceToChildActivity();
+                        replaceToChildActivity();
                     }
                 }
+            }
         });
     }
 
@@ -143,6 +143,10 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Please select Parent or child !", Toast.LENGTH_SHORT).show();
             return false;
 
+        }
+        else if(Register_EDT_PhoneNumber.getText().toString().length() != 10){
+            Toast.makeText(this, "Please select real phone number !", Toast.LENGTH_SHORT).show();
+            return false;
         }
 //        else if(!isValidEmail()){
 //            Toast.makeText(this, "Invalid email !", Toast.LENGTH_SHORT).show();
